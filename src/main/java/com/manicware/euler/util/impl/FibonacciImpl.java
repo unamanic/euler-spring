@@ -15,10 +15,12 @@ import java.util.stream.Stream;
 @Component
 public class FibonacciImpl implements Fibonacci {
 
-    private class BigIntHolder {
-        public BigInteger val;
-    }
-
+    /**
+     * @inheritDoc
+     *
+     * @param n
+     * @return
+     */
     @Override
     public Stream<BigInteger> streamFirst(long n){
         //Unending stream of Fibonacci
@@ -30,6 +32,12 @@ public class FibonacciImpl implements Fibonacci {
         return fibs.map(p -> p[1]);
     }
 
+    /**
+     * @inheritDoc
+     *
+     * @param n
+     * @return
+     */
     @Override
     public BigInteger find(long n){
         List<BigInteger> fibList = streamFirst(n).collect(Collectors.toList());
@@ -37,6 +45,12 @@ public class FibonacciImpl implements Fibonacci {
         return fibList.get(fibList.size() - 1);
     }
 
+    /**
+     * @inheritDoc
+     *
+     * @param limit
+     * @return
+     */
     @Override
     public Stream<BigInteger> streamToLimit(long limit){
 
