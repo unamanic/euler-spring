@@ -1,9 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="eulerApp">
 <head>
-    <title>Title</title>
+    <title>Project Euler - Spring Boot Application</title>
+
+    <script src="lib/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="lib/angular/angular.min.js" type="text/javascript"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <script src="js/app.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap-theme.min.css">
 </head>
-<body>
-<h1>Hello World</h1>
+<body ng-controller="defaultCtrl">
+    <div class="navbar navbar-default">
+        <div class="navbar-brand">{{appName}}</div>
+    </div>
 </body>
 </html>
