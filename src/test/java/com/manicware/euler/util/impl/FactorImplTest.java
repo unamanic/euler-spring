@@ -26,7 +26,6 @@ public class FactorImplTest {
     public void streamPrimeFactors() throws Exception {
         List<Long> primeFactors = factor.streamPrimeFactors(13195).collect(Collectors.toList());
         assertThat(primeFactors, Matchers.contains(
-                new Long(1),
                 new Long(5),
                 new Long(7),
                 new Long(13),
