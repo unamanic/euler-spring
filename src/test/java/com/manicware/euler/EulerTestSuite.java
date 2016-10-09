@@ -3,6 +3,7 @@ package com.manicware.euler;
 import com.manicware.euler.rest.Problem001Test;
 import com.manicware.euler.rest.Problem002Test;
 import com.manicware.euler.rest.Problem003Test;
+import com.manicware.euler.rest.Problem004Test;
 import com.manicware.euler.util.impl.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -18,7 +19,8 @@ import org.junit.runners.Suite;
         StringUtilsImplTest.class,
         Problem001Test.class,
         Problem002Test.class,
-        Problem003Test.class
+        Problem003Test.class,
+        Problem004Test.class
 })
 public class EulerTestSuite {
 
