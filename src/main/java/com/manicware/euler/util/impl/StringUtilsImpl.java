@@ -1,10 +1,12 @@
 package com.manicware.euler.util.impl;
 
 import com.manicware.euler.util.StringUtils;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by unamanic on 10/9/16.
  */
+@Component
 public class StringUtilsImpl implements StringUtils {
 
     @Override
