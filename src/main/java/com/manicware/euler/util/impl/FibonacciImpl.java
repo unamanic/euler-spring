@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 public class FibonacciImpl implements Fibonacci {
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      *
      * @param n
      * @return
@@ -33,7 +33,7 @@ public class FibonacciImpl implements Fibonacci {
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      *
      * @param n
      * @return
@@ -46,7 +46,7 @@ public class FibonacciImpl implements Fibonacci {
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      *
      * @param limit
      * @return
