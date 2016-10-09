@@ -2,6 +2,7 @@ package com.manicware.euler.rest;
 
 import com.manicware.euler.rest.response.Answer;
 import com.manicware.euler.util.Factor;
+import com.manicware.euler.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.LongStream;
 
 /**
  * Created by unamanic on 10/9/16.
@@ -30,7 +32,7 @@ public class Problem004 implements Problem {
             "Find the largest palindrome made from the product of two 3-digit numbers.";
 
     @Autowired
-    Factor factor;
+    StringUtils stringUtils;
 
     @Override
     @RequestMapping("/")
@@ -47,7 +49,18 @@ public class Problem004 implements Problem {
         answer.setQuestion(QUESTION);
         long start = new Date().getTime();
 
-        answer.setAnswer(null);
+        long low = (long)Math.pow(10, limit - 1);
+        long high = (long)Math.pow(10, limit) - 1;
+        long max = 0;
+        List<Long> set = LongStream.range(low, high).boxed().collect(Collectors.toList());
+        for(long i: set){
+            for (long j: set){
+                if(i * j > max && stringUtils.isPalindrome(String.valueOf(i*j))){
+                    max = i * j;
+                }
+            }
+        }
+        answer.setAnswer(String.valueOf(max));
 
         answer.setTime(new Date().getTime() - start);
         return answer;    }
