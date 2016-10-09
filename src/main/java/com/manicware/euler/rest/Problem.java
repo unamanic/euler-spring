@@ -12,5 +12,5 @@ public interface Problem {
     Answer getQuestion();
 
     @RequestMapping("/{limit}")
-    Answer doProblem(@PathVariable int limit);
+    Answer doProblem(@PathVariable long limit);
 }

@@ -49,8 +49,8 @@ public class Problem002 implements Problem{
         return answer;
     }
 
-    @Override
-    public Answer doProblem(@PathVariable int limit) {
+    @RequestMapping("/{limit}")
+    public Answer doProblem(@PathVariable long limit) {
         Answer answer = new Answer();
         answer.setQuestion(QUESTION);
         long start = new Date().getTime();

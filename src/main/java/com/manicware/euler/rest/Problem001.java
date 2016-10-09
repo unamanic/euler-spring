@@ -34,14 +34,13 @@ public class Problem001 implements Problem {
         return answer;
     }
 
-    @Override
     @RequestMapping("/{limit}")
-    public Answer doProblem(@PathVariable int limit) {
+    public Answer doProblem(@PathVariable long limit) {
         Answer answer = new Answer();
         answer.setQuestion(QUESTION);
         long start = new Date().getTime();
 
-        int sum = IntStream.range(1, limit).parallel().map(i -> {
+        int sum = IntStream.range(1, (int)limit).parallel().map(i -> {
             if (i % 3 == 0 || i % 5 == 0){
                 return i;
             }
