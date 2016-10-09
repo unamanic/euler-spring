@@ -23,7 +23,7 @@ public class PrimeImplTest {
     @Test
     public void streamPrimesLowerThan() throws Exception {
         Stream<Long> firstPrimes = prime.streamPrimesLowerThan(23l);
-        assertEquals("Count list", true, firstPrimes.count() == 10);
+        assertEquals("Count list", true, firstPrimes.count() == 9);
     }
 
     @Test

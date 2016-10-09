@@ -30,14 +30,14 @@ public class PrimeImpl implements Prime {
 
     @Override
     public Stream<Long> streamFirstPrimes(long limit) {
-        return Stream.iterate(1l, p -> p + 1)
+        return Stream.iterate(2l, p -> p + 1)
                 .filter(p -> isPrime(p))
                 .limit(limit);
     }
 
     @Override
     public Stream<Long> streamPrimesLowerThan(long limit) {
-        Stream<Long> infinitePrimeStream = Stream.iterate(1l, p -> p + 1)
+        Stream<Long> infinitePrimeStream = Stream.iterate(2l, p -> p + 1)
                 .filter(p -> isPrime(p));
         return StreamUtils.takeWhile(infinitePrimeStream, p -> p <= limit);
     }
