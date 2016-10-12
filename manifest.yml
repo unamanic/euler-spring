@@ -1,0 +1,5 @@
+applications:
+- name: spring-euler
+  memory: 1G
+  random-route: true
+  path: target/spring-euler-1.0-SNAPSHOT.jar
