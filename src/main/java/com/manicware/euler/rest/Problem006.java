@@ -63,5 +63,6 @@ public class Problem006 implements Problem {
         answer.setAnswer(sumOfSquares.subtract(squareOfSums).abs().toString());
 
         answer.setTime(new Date().getTime() - start);
-        return answer;    }
+        return answer;
+    }
 }
