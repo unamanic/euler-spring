@@ -13,7 +13,8 @@ import org.junit.runners.Suite;
         Problem002Test.class,
         Problem003Test.class,
         Problem004Test.class,
-        Problem005Test.class
+        Problem005Test.class,
+        Problem006Test.class
 })
 public class ProblemSuite {
 }
