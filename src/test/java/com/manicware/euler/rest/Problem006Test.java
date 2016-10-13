@@ -10,8 +10,7 @@ import static org.junit.Assert.*;
  */
 public class Problem006Test {
 
-    @Autowired
-    Problem006 problem006;
+    Problem006 problem006 = new Problem006();
 
     @Test
     public void doProblem() throws Exception {

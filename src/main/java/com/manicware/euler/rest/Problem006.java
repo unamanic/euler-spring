@@ -10,15 +10,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.math.BigInteger;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 
 /**
  * Created by unamanic on 10/9/16.
  */
 @RestController
-@RequestMapping("/problem005")
+@RequestMapping("/problem006")
 @Qualifier("Problem006")
 public class Problem006 implements Problem {
 
@@ -50,8 +53,14 @@ public class Problem006 implements Problem {
         answer.setQuestion(QUESTION);
         long start = new Date().getTime();
 
+        BigInteger sumOfSquares = LongStream.range(1, limit + 1).boxed()
+                .map(p -> (new BigInteger(String.valueOf(p)).pow(2)))
+                .reduce(BigInteger.ZERO, BigInteger::add);
 
-        answer.setAnswer(String.valueOf(null));
+        long sum = LongStream.range(1, limit + 1).sum();
+        BigInteger squareOfSums = new BigInteger(String.valueOf(sum)).pow(2);
+
+        answer.setAnswer(sumOfSquares.subtract(squareOfSums).abs().toString());
 
         answer.setTime(new Date().getTime() - start);
         return answer;    }
