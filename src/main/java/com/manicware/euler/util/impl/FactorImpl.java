@@ -31,6 +31,7 @@ public class FactorImpl implements com.manicware.euler.util.Factor {
         return factors(in).keySet().stream();
     }
 
+    @Override
     public Map<Long, Long> factors(long num) {
         Map<Long, Long> factors = new HashMap<>();
 

@@ -1,5 +1,6 @@
 package com.manicware.euler.util;
 
+import java.util.Map;
 import java.util.stream.Stream;
 
 /**
@@ -14,4 +15,6 @@ public interface Factor {
      * @return
      */
     Stream<Long> streamPrimeFactors(long in);
+
+    Map<Long, Long> factors(long num);
 }
