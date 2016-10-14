@@ -31,12 +31,9 @@ public class Problem002 implements Problem{
             "\n" +
             "By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.";
 
-    @Autowired
     Fibonacci fibonacci;
 
-    public Problem002() {
-    }
-
+    @Autowired
     public Problem002(Fibonacci fibonacci) {
         this.fibonacci = fibonacci;
     }

@@ -23,14 +23,19 @@ import java.util.stream.LongStream;
 @Qualifier("Problem007")
 public class Problem007 implements Problem {
 
-    @Autowired
-    Prime prime;
 
     private static final Logger log = LoggerFactory.getLogger(Problem007.class);
 
     private static final String QUESTION = "By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.\n" +
             "\n" +
             "What is the 10001st prime number?";
+
+    Prime prime;
+
+    @Autowired
+    public Problem007(Prime prime) {
+        this.prime = prime;
+    }
 
     @Override
     @RequestMapping("/")

@@ -31,8 +31,12 @@ public class Problem004 implements Problem {
             "\n" +
             "Find the largest palindrome made from the product of two 3-digit numbers.";
 
-    @Autowired
     StringUtils stringUtils;
+
+    @Autowired
+    public Problem004(StringUtils stringUtils) {
+        this.stringUtils = stringUtils;
+    }
 
     @Override
     @RequestMapping("/")

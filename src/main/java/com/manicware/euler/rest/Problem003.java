@@ -29,8 +29,12 @@ public class Problem003 implements Problem {
             "\n" +
             "What is the largest prime factor of the number 600851475143 ?";
 
-    @Autowired
     Factor factor;
+
+    @Autowired
+    public Problem003(Factor factor) {
+        this.factor = factor;
+    }
 
     @Override
     @RequestMapping("/")

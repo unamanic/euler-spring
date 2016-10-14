@@ -18,8 +18,12 @@ import java.util.stream.Stream;
 @Component
 public class FactorImpl implements com.manicware.euler.util.Factor {
 
-    @Autowired
     Prime prime;
+
+    @Autowired
+    public FactorImpl(Prime prime) {
+        this.prime = prime;
+    }
 
     /**
      * {@inheritDoc}
