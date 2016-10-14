@@ -9,5 +9,5 @@ import org.springframework.context.annotation.Configuration;
  * Created by unamanic on 10/9/16.
  */
 @Configuration
-@ComponentScan(basePackageClasses = {PrimeImpl.class, Problem003.class})
+@ComponentScan(basePackageClasses = {PrimeImpl.class, Problem007.class})
 public class Problem007TestConfig {}
