@@ -2,6 +2,7 @@ package com.manicware.euler.rest;
 
 import com.codepoetics.protonpack.StreamUtils;
 import com.manicware.euler.rest.response.Answer;
+import com.manicware.euler.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -10,8 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigInteger;
-import java.util.Comparator;
-import java.util.Date;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 /**
@@ -48,7 +50,27 @@ public class Problem009 implements Problem {
         answer.setQuestion(QUESTION);
         long start = new Date().getTime();
 
-        answer.setAnswer(null);
+
+
+        OptionalLong product = LongStream.range(1l, limit/2).map(a -> {
+            OptionalLong foo = LongStream.range(1l, limit - (a + 1)).map(b -> {
+                long c = limit - (a + b);
+                if (Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2)){
+                    return a * b * c;
+                }
+                return 0;
+            }).filter(p -> p > 0).findFirst();
+            if(foo.isPresent()){
+                return  foo.getAsLong();
+            }
+            return 0;
+        }).filter(p -> p > 0).findFirst();
+
+        if(product.isPresent()) {
+            answer.setAnswer(String.valueOf(product.getAsLong()));
+        } else {
+            answer.setAnswer("NONE");
+        }
 
         answer.setTime(new Date().getTime() - start);
         return answer;
