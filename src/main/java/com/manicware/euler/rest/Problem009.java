@@ -53,7 +53,7 @@ public class Problem009 implements Problem {
 
 
         OptionalLong product = LongStream.range(1l, limit/2).map(a -> {
-            OptionalLong foo = LongStream.range(a, limit - (a + 1)).map(b -> {
+            OptionalLong foo = LongStream.range(a, (limit - a)/2 + 1).map(b -> {
                 long c = limit - (a + b);
                 if (Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2)){
                     return a * b * c;
