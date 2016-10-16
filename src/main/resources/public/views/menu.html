@@ -1,13 +1,5 @@
 <div class="well" ng-controller="menuCtrl">
     <ul>
-        <li><a href="#/problem/problem001">Problem 1</a></li>
-        <li><a href="#/problem/problem002">Problem 2</a></li>
-        <li><a href="#/problem/problem003">Problem 3</a></li>
-        <li><a href="#/problem/problem004">Problem 4</a></li>
-        <li><a href="#/problem/problem005">Problem 5</a></li>
-        <li><a href="#/problem/problem006">Problem 6</a></li>
-        <li><a href="#/problem/problem007">Problem 7</a></li>
-        <li><a href="#/problem/problem008">Problem 8</a></li>
-        <li><a href="#/problem/problem009">Problem 9</a></li>
+        <li ng-repeat="question in questions"><a href="{{question.endpoint}}">{{question.questionName}}</a></li>
     </ul>
 </div>

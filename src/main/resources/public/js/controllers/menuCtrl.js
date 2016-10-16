@@ -3,7 +3,13 @@
  */
 (function(){
     angular.module('eulerApp')
-        .controller('menuCtrl', function(){
+        .controller('menuCtrl', ['$scope','questionService',function($scope, questionService){
+            $scope.questions = [];
 
-        });
+            var q = questionService.getQuestions()
+
+            q.$promise.then(function(data){
+                $scope.questions = data._embedded.questions;
+            });
+        }]);
 })();
