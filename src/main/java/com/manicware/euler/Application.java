@@ -42,7 +42,7 @@ public class Application implements CommandLineRunner  {
                 "Problem007",
                 "Problem008",
                 "Problem009",
-                "Problem009")
+                "Problem010")
                 .forEach(p -> {
                     questionRepository.save(new Question(p, "#/problem/" + p.toLowerCase()));
                 });

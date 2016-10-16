@@ -51,7 +51,9 @@ public class Problem010 implements Problem {
         answer.setQuestion(QUESTION);
         long start = new Date().getTime();
 
+        Long ans = prime.streamPrimesLowerThan(limit).reduce(0l, (a,b) -> a+b);
 
+        answer.setAnswer(String.valueOf(ans));
 
         answer.setTime(new Date().getTime() - start);
         return answer;
